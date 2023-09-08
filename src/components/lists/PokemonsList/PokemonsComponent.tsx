@@ -14,7 +14,7 @@ export function PokemonsCompnent() {
             console.log('result', result)
             setData(result.results);
         } catch (error) {
-            console.error('Ошибка:', error);
+            console.error('Error:', error);
         }
         };
 

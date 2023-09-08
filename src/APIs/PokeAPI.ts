@@ -5,7 +5,7 @@ export default class PokeAPI {
 
     GetPokemons = async () => {
         let res: any = []
-        await axios.get(this.baseUrl + 'pokemon?limit=151')
+        await axios.get(this.baseUrl + 'pokemon?limit=1000')
             .then(function (response) {
                 res = response.data
             })

@@ -4,7 +4,8 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
     value: 0,
-    isOpenModal: false
+    isOpenModal: false,
+    pokemons: []
   },
   reducers: {
     increment: (state) => {
@@ -14,26 +15,29 @@ export const counterSlice = createSlice({
       // immutable state based off those changes.
       // Also, no return statement is required from these functions.
       state.value += 1
-    //   state.isOpenModal = true
+      state.isOpenModal = true
     },
     decrement: (state) => {
       state.value -= 1
-    //   state.isOpenModal = false
+      state.isOpenModal = false
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload
-    //   state.isOpenModal = false
+      state.isOpenModal = false
     },
     openModal: (state) => {
         state.isOpenModal = true
     },
     closeModal: (state) => {
         state.isOpenModal = false
+    },
+    addPokemon: (state, action) => {
+        state.pokemons.push(action.payload)
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmoun, openModal, closeModal } = counterSlice.actions
+export const { increment, decrement, incrementByAmoun, openModal, closeModal, addPokemon } = counterSlice.actions
 
 export default counterSlice.reducer

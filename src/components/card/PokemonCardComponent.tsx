@@ -3,11 +3,12 @@ import './PokemonCard.scss'
 import PokemonDetails from "../layouts/PokemonDetails/PokemonDetails";
 import Modal from "../layouts/modal/Modal";
 import { useSelector, useDispatch } from "react-redux";
-import {openModal} from '../../features/counter/counterSlice'
+import {fillCurrentPoke, openModal} from '../../features/counter/counterSlice'
 
 type PokemonCardType = {
     imgUrl: string,
-    pokeName: string
+    pokeName: string,
+    id: number,
 }
 
 export function PokemonCardComponent(props: PokemonCardType) {
@@ -17,7 +18,14 @@ export function PokemonCardComponent(props: PokemonCardType) {
     return (
         <div 
             className="Card"
-            onClick={() => dispatch(openModal())}
+            onClick={() => {
+                console.log('props.id, props.pokename: ', `${props.id}  ${props.pokeName}`)
+                dispatch(fillCurrentPoke({
+                    id: props.id,
+                    name: props.pokeName
+                }))
+                dispatch(openModal())
+            }}
         >
             <img src={props.imgUrl}/>
             <div className="Card-Title">

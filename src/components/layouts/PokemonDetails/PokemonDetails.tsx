@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
-// import "./PokemonDetails.scss"
 import { PokemonStateType } from "../../../APIs/PokeTypes";
 import PokeAPI from "../../../APIs/PokeAPI";
 import { useSelector } from "react-redux";
@@ -8,10 +6,8 @@ import './PokemonDetails.scss'
 
 const PokemonDetails = () => {
   const CurPoke = useSelector((state: any) => state.counter.currentPokemon)
-  console.log('CurPoke: ', CurPoke)
 
   const [pokeDetails, setPokeDetails] = useState<PokemonStateType>(CurPoke)
-  console.log('pokeDetails', pokeDetails)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,9 +28,7 @@ const PokemonDetails = () => {
             special_defense: result.stats[4].base_stat,
             speed: result.stats[5].base_stat,
           }
-          console.log('result pokemon dets', result)
           setPokeDetails(pokemon);
-          console.log('p poke: ', pokemon)
       } catch (error) {
           console.error('Error:', error);
       }

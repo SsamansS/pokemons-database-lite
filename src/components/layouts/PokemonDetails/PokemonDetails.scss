@@ -1,32 +1,23 @@
-.modal {
-    height: 100vh;
-    width: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.5s;
+div {
+    text-align: center;
 }
 
-.modal.active {
-    opacity: 1;
-    pointer-events: all;
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
 }
 
-.modal_content {
-    padding: 20px;
-    border-radius: 12px;
-    background-color: white;
-    width: 50vw;
-    transform: scale(0.5);
-    transition: 0.4s all;
+.wrapper-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 0;
+    line-height: 0.005;
+    padding-top: 5px; /* Уменьшение верхнего отступа */
+    padding-bottom: 5px; /* Уменьшение нижнего отступа */
 }
 
-.modal_content.active {
-    transform: scale(1);
+.stat-wrraper {
+    text-align: left;
 }

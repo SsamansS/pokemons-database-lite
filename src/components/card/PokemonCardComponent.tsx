@@ -5,7 +5,7 @@ import Modal from "../layouts/modal/Modal";
 import { useSelector, useDispatch } from "react-redux";
 import {fillCurrentPoke, openModal} from './../../features/counter/counterSlice'
 
-type PokemonCardType = {
+export type PokemonCardType = {
     imgUrl: string,
     pokeName: string,
     id: number,

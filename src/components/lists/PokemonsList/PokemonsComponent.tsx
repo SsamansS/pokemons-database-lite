@@ -14,7 +14,6 @@ export function PokemonsCompnent() {
         const fetchData = async () => {
             try {
                 const result: PokemonsResAPI = await new PokeAPI().GetPokemons();
-                console.log('result', result)
                 setData(result.results);
             } catch (error) {
                 console.error('Error:', error);
@@ -33,7 +32,6 @@ export function PokemonsCompnent() {
         
     }, [data]);
 
-    console.log('data', data);
     return (
         <div className="tc bg-white ma0 pa4 min-vh-100">
             <Search details={filteredPokemons}/>

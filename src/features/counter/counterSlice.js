@@ -27,14 +27,19 @@ export const counterSlice = createSlice({
       console.log('payload', action.payload)
       state.currentPokemon = action.payload
       console.log('state.currentPokemon: ', state.currentPokemon)
-    },
-    setPokemons: (state, action) => {
-      state.pokemons = action.payload
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmoun, openModal, closeModal, addPokemon, fillCurrentPoke, setPokemons } = counterSlice.actions
+export const { 
+  increment, 
+  decrement, 
+  incrementByAmoun, 
+  openModal, 
+  closeModal, 
+  addPokemon, 
+  fillCurrentPoke, 
+} = counterSlice.actions
 
 export default counterSlice.reducer

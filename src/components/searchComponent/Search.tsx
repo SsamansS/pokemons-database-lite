@@ -24,9 +24,9 @@ function Search(props: {details: PokemonCardType[]}) {
 
   function searchList() {
     return (
-        <Scroll>
-            <SearchList filteredPokemons={filteredPokemons} />
-        </Scroll>
+      <Scroll>
+          <SearchList filteredPokemons={filteredPokemons} />
+      </Scroll>
     );
   }
 

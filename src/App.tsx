@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import './App.css';
 import { PokemonsCompnent } from './components/lists/PokemonsList/PokemonsComponent';
 import Modal from './components/layouts/modal/Modal';
@@ -11,7 +10,7 @@ function App() {
   return (
     <div>
       <PokemonsCompnent/>
-      <Modal isOpen={isOpenModal} setOpen={() => console.log('dfs')}>
+      <Modal isOpen={isOpenModal}>
         <PokemonDetails/>
       </Modal>
     </div>

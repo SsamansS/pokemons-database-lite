@@ -18,7 +18,7 @@ const PokemonDetails = () => {
           const result: any = await new PokeAPI().GetPokemonDetails(CurPoke.id);
           const pokemon: PokemonStateType = {
             id: CurPoke.id,
-            name: result.name,
+            name: CurPoke.name,
             height: result.height,
             weight: result.weight,
             abilities: result.abilities.map((ability:any) => ability.ability.name),
@@ -47,6 +47,7 @@ const PokemonDetails = () => {
       <h5>{`fdsfsd ${pokeDetails.name}`}</h5>
       <h5>{`fdsfsd ${pokeDetails.id}`}</h5>
       <h5>{`fdsfsd ${pokeDetails.height}`}</h5>
+      <h5>{`fdsfsd ${pokeDetails.types !== undefined ? pokeDetails.types[0] : "ds"}`}</h5>
     </div>
   );
 }

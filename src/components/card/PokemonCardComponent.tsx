@@ -3,7 +3,7 @@ import './PokemonCard.scss'
 import PokemonDetails from "../layouts/PokemonDetails/PokemonDetails";
 import Modal from "../layouts/modal/Modal";
 import { useSelector, useDispatch } from "react-redux";
-import {fillCurrentPoke, openModal} from '../../features/counter/counterSlice'
+import {fillCurrentPoke, openModal} from './../../features/counter/counterSlice'
 
 type PokemonCardType = {
     imgUrl: string,
@@ -12,7 +12,6 @@ type PokemonCardType = {
 }
 
 export function PokemonCardComponent(props: PokemonCardType) {
-    const isOpenModel = useSelector((state: any) => state.counter.isOpenModel)
     const dispatch = useDispatch()
 
     return (

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { PokemonStateType } from "../../../APIs/PokeTypes";
 import PokeAPI from "../../../APIs/PokeAPI";
 import { useSelector } from "react-redux";
+import './PokemonDetails.scss'
 
 const PokemonDetails = () => {
   const CurPoke = useSelector((state: any) => state.counter.currentPokemon)
@@ -19,6 +20,7 @@ const PokemonDetails = () => {
           const pokemon: PokemonStateType = {
             id: CurPoke.id,
             name: CurPoke.name,
+            imgUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${CurPoke.id}.png`,
             height: result.height,
             weight: result.weight,
             abilities: result.abilities.map((ability:any) => ability.ability.name),
@@ -39,15 +41,36 @@ const PokemonDetails = () => {
     };
 
     fetchData();
-}, [CurPoke.id, CurPoke.pokeName]);
+}, [CurPoke]);
 
   return (
     <div>
-      {/* <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${CurPoke.id}.png`}/> */}
-      <h5>{`fdsfsd ${pokeDetails.name}`}</h5>
-      <h5>{`fdsfsd ${pokeDetails.id}`}</h5>
-      <h5>{`fdsfsd ${pokeDetails.height}`}</h5>
-      <h5>{`fdsfsd ${pokeDetails.types !== undefined ? pokeDetails.types[0] : "ds"}`}</h5>
+      <h2>{pokeDetails.name}</h2>
+      <div className="wrapper">
+        <div>
+          <img src={pokeDetails.imgUrl}/>
+
+          <div className="wrapper-skills">
+            <p><b>Abilities: </b></p>
+            {pokeDetails.abilities ? pokeDetails.abilities.map(ability => <p>{ability}</p>) : <></>}
+          </div>
+          <div className="wrapper-skills">
+            <p><b>Types: </b></p>
+            {pokeDetails.types ? pokeDetails.types.map(type => <p>{type}</p>) : <></>}
+          </div>
+        </div>
+        <div className="stat-wrraper">
+          <p>hp: {pokeDetails.hp}</p>
+          <p>attack: {pokeDetails.attack}</p>
+          <p>defense: {pokeDetails.defense}</p>
+          <p>speed: {pokeDetails.speed}</p>
+          <p>height: {pokeDetails.height}</p>
+          <p>weight: {pokeDetails.weight}</p>
+          <p>special-attack: {pokeDetails.special_attack}</p>
+          <p>special-defense: {pokeDetails.special_defense}</p>
+        </div>
+      </div>
+      
     </div>
   );
 }

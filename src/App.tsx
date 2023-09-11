@@ -7,18 +7,11 @@ import PokemonDetails from './components/layouts/PokemonDetails/PokemonDetails';
 
 function App() {
   const isOpenModal = useSelector((state: any) => state.counter.isOpenModal)
-  // const [currentPoke, setCurrentPoke] = useState(useSelector((state: any) => state.counter.currentPokemon))
-
-  // useEffect(() => {
-  //   setCurrentPoke(useSelector((state: any) => state.counter.currentPokemon))
-  // }, [])
 
   return (
     <div>
       <PokemonsCompnent/>
       <Modal isOpen={isOpenModal} setOpen={() => console.log('dfs')}>
-        {/* <h5>dsdsadsafsd</h5> */}
-        {/* <span>{`${pokeDetails.h`}</span> */}
         <PokemonDetails/>
       </Modal>
     </div>

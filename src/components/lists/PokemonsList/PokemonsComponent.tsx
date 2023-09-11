@@ -28,6 +28,7 @@ export function PokemonsCompnent() {
             
                 <PokemonCardComponent 
                     key={index}
+                    id={index+1}
                     pokeName={poke.name}
                     imgUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`}
                 />

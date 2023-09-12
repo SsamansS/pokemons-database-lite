@@ -14,19 +14,15 @@ export const counterSlice = createSlice({
   reducers: {
     openModal: (state) => {
        state.isOpenModal = true
-       console.log('opened')
     },
     closeModal: (state) => {
        state.isOpenModal = false
-       console.log('closed')
     },
     addPokemon: (state, action) => {
       state.pokemons.push(action.payload)
     },
     fillCurrentPoke: (state, action) => {
-      console.log('payload', action.payload)
       state.currentPokemon = action.payload
-      console.log('state.currentPokemon: ', state.currentPokemon)
     }
   },
 })
